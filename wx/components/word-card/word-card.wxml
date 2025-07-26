@@ -1,0 +1,7 @@
+<view class="word-card">
+    <text class="word">{{word.text}}</text>
+    <button bindtap="playAudio">发音</button>
+    <button bindtap="showExample">例句</button>
+    <button bindtap="markMastered">已掌握</button>
+    <button bindtap="markReviewLater">稍后复习</button>
+</view>

@@ -1,0 +1,345 @@
+/* 单词详情页面样式 */
+
+page {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  min-height: 100vh;
+}
+
+.detail-container {
+  min-height: 100vh;
+  padding: 0 20px 40px 20px;
+}
+
+/* 头部区域 */
+.header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 0 30px 0;
+}
+
+.back-btn, .favorite-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.back-icon, .favorite-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+
+.page-title {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 单词主体区域 */
+.word-main-section {
+  margin-bottom: 30px;
+}
+
+.word-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  backdrop-filter: blur(15px);
+}
+
+.detail-russian-word {
+  display: block;
+  font-size: 52px;
+  font-weight: 300;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.pronunciation-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.detail-pronunciation {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+.detail-audio-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.detail-audio-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.audio-icon {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
+
+.detail-translation {
+  display: block;
+  font-size: 32px;
+  color: #ffffff;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.word-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.word-tags {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.difficulty-level {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+/* 区域标题 */
+.section-title {
+  margin-bottom: 15px;
+}
+
+.section-title text {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 例句区域 */
+.example-section {
+  margin-bottom: 30px;
+}
+
+.example-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.example-russian {
+  display: block;
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.example-chinese {
+  display: block;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+.example-audio-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-audio-icon {
+  width: 18px;
+  height: 18px;
+  filter: invert(1);
+}
+
+/* 学习统计区域 */
+.stats-section {
+  margin-bottom: 30px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.stat-number {
+  display: block;
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 复习时间区域 */
+.review-section {
+  margin-bottom: 40px;
+}
+
+.review-info {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.review-date {
+  display: block;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.review-interval {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 操作按钮区域 */
+.action-section {
+  display: flex;
+  gap: 15px;
+}
+
+.action-btn {
+  flex: 1;
+  height: 48px;
+  border-radius: 24px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.reset-btn {
+  background: rgba(255, 99, 99, 0.8);
+  color: #ffffff;
+}
+
+.review-btn {
+  background: rgba(76, 175, 80, 0.8);
+  color: #ffffff;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 响应式设计 */
+@media (max-width: 375px) {
+  .detail-russian-word {
+    font-size: 40px;
+  }
+  
+  .detail-translation {
+    font-size: 24px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-section {
+    flex-direction: column;
+  }
+}
+
+/* 动画效果 */
+.word-card {
+  animation: slideInDown 0.6s ease-out;
+}
+
+.example-card, .stats-grid, .review-info {
+  animation: slideInUp 0.6s ease-out 0.2s both;
+}
+
+.action-section {
+  animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

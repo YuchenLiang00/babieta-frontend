@@ -1,0 +1,303 @@
+/* 学习页面样式 */
+
+page {
+  height: 100vh;
+  background: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.learning-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  background: #ffffff;
+}
+
+/* 进度条区域 */
+.progress-section {
+  margin-bottom: 40px;
+}
+
+.progress-bar-container {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e9ecef;
+}
+
+.progress-bar-bg {
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #4CAF50;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+/* 单词展示区域 */
+.word-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.word-display {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.learning-word {
+  font-size: 48px;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.learning-translation {
+  font-size: 36px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* 选择题区域 */
+.options-section {
+  margin-bottom: 30px;
+}
+
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 10px;
+}
+
+.option-btn {
+  background: #ffffff;
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  padding: 18px 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.option-btn:hover {
+  background: #f8f9fa;
+}
+
+.option-btn.selected {
+  border-color: #4CAF50;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.option-btn.correct {
+  border-color: #4CAF50;
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.option-btn.wrong {
+  border-color: #f44336;
+  background: rgba(244, 67, 54, 0.1);
+}
+
+.option-text {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+/* 不认识按钮 */
+.unknown-section {
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.unknown-btn {
+  background: #ffffff;
+  border: 2px solid #ff9800;
+  border-radius: 12px;
+  padding: 15px 40px;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.unknown-btn:hover {
+  background: rgba(255, 152, 0, 0.1);
+}
+
+.unknown-btn:disabled {
+  opacity: 0.5;
+  transform: none;
+}
+
+.unknown-text {
+  font-size: 16px;
+  color: #ff9800;
+  font-weight: 600;
+}
+
+/* 反馈区域 */
+.feedback-section {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.feedback-content {
+  margin-bottom: 20px;
+}
+
+.feedback-content.correct-feedback .feedback-icon {
+  filter: hue-rotate(120deg);
+}
+
+.feedback-content.wrong-feedback .feedback-icon {
+  filter: hue-rotate(0deg);
+}
+
+.feedback-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+}
+
+.feedback-text {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.continue-btn {
+  background: #4CAF50;
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  padding: 12px 40px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.continue-btn:hover {
+  background: #45a049;
+  border-color: #45a049;
+}
+
+/* 返回按钮 */
+.back-btn {
+  position: fixed;
+  top: 50px;
+  left: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #4CAF50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #4CAF50;
+}
+
+.back-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(0.4);
+}
+
+/* 响应式设计 */
+@media (max-width: 375px) {
+  .learning-word {
+    font-size: 40px;
+  }
+  
+  .learning-translation {
+    font-size: 30px;
+  }
+  
+  .option-btn {
+    padding: 15px;
+  }
+  
+  .option-text {
+    font-size: 16px;
+  }
+  
+  .learning-container {
+    padding: 15px;
+  }
+}
+
+/* 动画效果 */
+.word-display {
+  animation: slideInDown 0.6s ease-out;
+}
+
+.options-grid {
+  animation: slideInUp 0.6s ease-out 0.2s both;
+}
+
+.unknown-section {
+  animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

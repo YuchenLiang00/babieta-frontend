@@ -1,0 +1,90 @@
+<!-- 单词详情页面 -->
+<view class="detail-container">
+    <!-- 头部区域 -->
+    <view class="header-section">
+        <button class="back-btn" bindtap="goBack">
+            <image src="/assets/icons/arrow-left.svg" class="back-icon" />
+        </button>
+        <text class="page-title">单词详情</text>
+        <button class="favorite-btn" bindtap="toggleFavorite">
+            <image src="/assets/icons/{{isFavorite ? 'heart-filled' : 'heart-empty'}}.svg" class="favorite-icon" />
+        </button>
+    </view>
+    <!-- 单词主体区域 -->
+    <view class="word-main-section">
+        <view class="word-card">
+            <!-- 俄语单词 -->
+            <text class="detail-russian-word">{{wordInfo.word}}</text>
+            <!-- 音标和发音 -->
+            <view class="pronunciation-section">
+                <text class="detail-pronunciation">[{{wordInfo.pronunciation}}]</text>
+                <button class="detail-audio-btn" bindtap="playAudio">
+                    <image src="/assets/icons/sound.svg" class="audio-icon" />
+                </button>
+            </view>
+            <!-- 中文释义 -->
+            <text class="detail-translation">{{wordInfo.translation}}</text>
+            <!-- 词性和难度 -->
+            <view class="word-meta">
+                <text class="word-tags" wx:for="{{wordInfo.tags}}" wx:key="*this">{{item}}</text>
+                <text class="difficulty-level">难度: {{wordInfo.difficulty}}/5</text>
+            </view>
+        </view>
+    </view>
+    <!-- 例句区域 -->
+    <view class="example-section">
+        <view class="section-title">
+            <text>例句</text>
+        </view>
+        <view class="example-card">
+            <text class="example-russian">{{wordInfo.example}}</text>
+            <text class="example-chinese">{{wordInfo.exampleTranslation}}</text>
+            <button class="example-audio-btn" bindtap="playExampleAudio">
+                <image src="/assets/icons/sound.svg" class="example-audio-icon" />
+            </button>
+        </view>
+    </view>
+    <!-- 学习统计区域 -->
+    <view class="stats-section" wx:if="{{wordStats}}">
+        <view class="section-title">
+            <text>学习统计</text>
+        </view>
+        <view class="stats-grid">
+            <view class="stat-item">
+                <text class="stat-number">{{wordStats.totalReviews}}</text>
+                <text class="stat-label">总复习次数</text>
+            </view>
+            <view class="stat-item">
+                <text class="stat-number">{{wordStats.correctAnswers}}</text>
+                <text class="stat-label">正确次数</text>
+            </view>
+            <view class="stat-item">
+                <text class="stat-number">{{accuracy}}%</text>
+                <text class="stat-label">正确率</text>
+            </view>
+            <view class="stat-item">
+                <text class="stat-number">{{masteryLevel}}%</text>
+                <text class="stat-label">掌握程度</text>
+            </view>
+        </view>
+    </view>
+    <!-- 下次复习时间 -->
+    <view class="review-section" wx:if="{{wordStats && wordStats.nextReviewDate}}">
+        <view class="section-title">
+            <text>下次复习</text>
+        </view>
+        <view class="review-info">
+            <text class="review-date">{{nextReviewDateText}}</text>
+            <text class="review-interval">间隔: {{wordStats.interval}}天</text>
+        </view>
+    </view>
+    <!-- 操作按钮区域 -->
+    <view class="action-section">
+        <button class="action-btn reset-btn" bindtap="resetProgress">
+            <text>重置学习进度</text>
+        </button>
+        <button class="action-btn review-btn" bindtap="reviewNow">
+            <text>立即复习</text>
+        </button>
+    </view>
+</view>

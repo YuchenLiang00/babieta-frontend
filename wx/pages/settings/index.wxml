@@ -1,0 +1,46 @@
+<view class="settings-container">
+  <view class="section-title">学习设置</view>
+  
+  <view class="setting-item">
+    <text class="label">每日学习量</text>
+    <view class="control">
+      <slider min="5" max="30" step="1" value="{{dailyGoal}}" bindchange="setDailyGoal" />
+      <text class="value">{{dailyGoal}}个单词</text>
+    </view>
+  </view>
+  
+  <view class="section-title">显示设置</view>
+  
+  <view class="setting-item">
+    <text class="label">背景图风格</text>
+    <view class="control">
+      <picker value="{{bgStyle}}" range="{{bgStyles}}" bindchange="setBgStyle">
+        <text class="picker-text">{{bgStyles[bgStyle]}}</text>
+      </picker>
+    </view>
+  </view>
+  
+  <view class="setting-item">
+    <text class="label">跟随日落切换背景</text>
+    <view class="control">
+      <switch checked="{{sunsetMode}}" bindchange="toggleSunsetMode" />
+    </view>
+  </view>
+  
+  <view class="setting-item">
+    <text class="label">主题色</text>
+    <view class="control">
+      <picker value="{{themeColor}}" range="{{themeColors}}" bindchange="setThemeColor">
+        <text class="picker-text">{{themeColors[themeColor]}}</text>
+      </picker>
+    </view>
+  </view>
+  
+  <view class="setting-item">
+    <text class="label">字体大小</text>
+    <view class="control">
+      <slider min="14" max="24" step="1" value="{{fontSize}}" bindchange="setFontSize" />
+      <text class="value">{{fontSize}}px</text>
+    </view>
+  </view>
+</view>

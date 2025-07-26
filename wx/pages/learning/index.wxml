@@ -1,0 +1,50 @@
+<!-- 学习页面 -->
+<view class="learning-container">
+    <!-- 进度条 -->
+    <view class="progress-section">
+        <view class="progress-bar-container">
+            <view class="progress-bar-bg">
+                <view class="progress-bar-fill" style="width: {{progressPercentage}}%"></view>
+            </view>
+        </view>
+    </view>
+    <!-- 单词展示区域 -->
+    <view class="word-section">
+        <view class="word-display">
+            <!-- 根据当前模式显示单词或释义 -->
+            <text class="learning-word" wx:if="{{mode === 'word'}}">{{currentWord.word}}</text>
+            <text class="learning-translation" wx:if="{{mode === 'translation'}}">
+                {{currentWord.translation}}
+            </text>
+        </view>
+    </view>
+    <!-- 选择题区域 -->
+    <view class="options-section">
+        <view class="options-grid">
+            <button wx:for="{{options}}" wx:key="index" class="option-btn {{selectedOption === index ? 'selected' : ''}} {{showResult && index === correctIndex ? 'correct' : ''}} {{showResult && selectedOption === index && index !== correctIndex ? 'wrong' : ''}}" bindtap="selectOption" data-index="{{index}}" disabled="{{showResult}}" plain="{{true}}">
+                <text class="option-text">{{item}}</text>
+            </button>
+        </view>
+    </view>
+    <!-- 不认识按钮 -->
+    <view class="unknown-section">
+        <button class="unknown-btn" bindtap="markUnknown" disabled="{{showResult}}" plain="{{true}}">
+            <text class="unknown-text">不认识</text>
+        </button>
+    </view>
+    <!-- 结果反馈区域 -->
+    <view class="feedback-section" wx:if="{{showResult}}">
+        <view class="feedback-content {{isCorrect ? 'correct-feedback' : 'wrong-feedback'}}">
+            <image src="/assets/icons/{{isCorrect ? 'check' : 'close'}}.svg" class="feedback-icon" />
+            <text class="feedback-text">{{feedbackText}}</text>
+        </view>
+        <!-- 继续按钮 -->
+        <button class="continue-btn" bindtap="nextWord" plain="{{true}}">
+            <text>继续</text>
+        </button>
+    </view>
+    <!-- 返回按钮 -->
+    <button class="back-btn" bindtap="goBack">
+        <image src="/assets/icons/arrow-left.svg" class="back-icon" />
+    </button>
+</view>

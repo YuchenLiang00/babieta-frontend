@@ -1,0 +1,23 @@
+<!-- 背景层 -->
+<view class="background-layer" style="background-image: url({{backgroundImage}})"></view>
+<!-- 主界面容器 -->
+<view class="main-container">
+  <!-- 单词展示区域 -->
+  <view class="word-display-area">
+    <!-- 俄语单词 -->
+    <text class="main-russian-word">{{displayWord.word}}</text>
+    <!-- 中文释义 -->
+    <text class="main-chinese-translation">{{displayWord.translation}}</text>
+  </view>
+  <!-- 功能按钮区域 -->
+  <view class="function-buttons">
+    <!-- 复习按钮 -->
+    <button class="main-btn review-btn" bindtap="startReview" data-test="review">
+      复习 {{reviewCount}}个
+    </button>
+    <!-- 学习新词按钮 -->
+    <button class="main-btn learn-btn" bindtap="startLearning" data-test="learn">
+      学习 {{newWordsCount}}个
+    </button>
+  </view>
+</view>

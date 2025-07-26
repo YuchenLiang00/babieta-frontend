@@ -1,0 +1,58 @@
+.word-card {
+  width: 92%;
+  margin: 20px auto;
+  padding: 28px 20px;
+  background: var(--card-background, rgba(255,255,255,0.92));
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+.word-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.word {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 10px 0 24px;
+  font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+button {
+  margin: 5px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007aff;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  min-width: 100px;
+}
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+button:active {
+  transform: translateY(1px);
+}
+button.mastered {
+  background: #4caf50;
+  color: #fff;
+}
+button.review-later {
+  background: #ff9800;
+  color: #fff;
+}
