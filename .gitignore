@@ -25,41 +25,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# iOS / Xcode
-ios/build/
-ios/DerivedData/
-ios/*.xcodeproj/*.mode1v3
-ios/*.xcodeproj/*.mode2v3
-ios/*.xcodeproj/*.moved-aside
-ios/*.xcodeproj/*.pbxuser
-ios/*.xcodeproj/*.perspectivev3
-ios/*.xcodeproj/project.xcworkspace/xcuserdata/
-ios/*.xcodeproj/xcuserdata/
-ios/*.xcworkspace/xcuserdata/
-ios/*.hmap
-ios/*.ipa
-ios/*.dSYM.zip
-ios/*.dSYM
-
-# CocoaPods
-ios/Pods/
-ios/Podfile.lock
-
-# Carthage
-ios/Carthage/Build/
-
-# Swift Package Manager
-ios/.build/
-ios/Packages/
-ios/Package.pins
-ios/Package.resolved
-
-# fastlane
-ios/fastlane/report.xml
-ios/fastlane/Preview.html
-ios/fastlane/screenshots/**/*.png
-ios/fastlane/test_output
-
 # WeChat Mini Program
 wx/node_modules/
 wx/dist/
